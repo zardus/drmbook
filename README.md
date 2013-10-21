@@ -18,3 +18,7 @@ Now run the server:
 The client then runs as:
 
 	python client.py localhost 31337 "my book"
+
+A book's hash can be verified by doing:
+
+	echo -n "This is our secret watermark for THE_BOOK_TITLE" | md5sum
