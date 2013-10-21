@@ -23,7 +23,8 @@ s.send(userkey + title)
 print "Receiving ebook..."
 encrypted = s.makefile().read()
 if len(encrypted) < 64:
-	print "Received streaming error: ", encrypted
+	print "Received streaming error:", encrypted
+	exit(0)
 
 print "Decrypting ebook..."
 book = drm.decrypt_drm_book(encrypted, userkey)

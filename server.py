@@ -26,6 +26,9 @@ class DRMHandler(SocketServer.BaseRequestHandler):
 				self.request.send("Sorry, this book has already been streamed. Try another!")
 				return
 
+			with open("done_hashes", "a") as done_hashes:
+				done_hashes.write(titlehash + "\n")
+
 			l.info("TITLE(%s) HASH(%s)" % (title, titlehash))
 
 			source = random.choice([ "holygrail", "futurama", "doctorwho", "arresteddevelopment", "dexter", "simpsons", "starwars" ])
