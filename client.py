@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+'''The completely uncrackable DRMBook client.'''
 
 import sys
 import socket
